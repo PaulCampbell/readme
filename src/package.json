@@ -1,0 +1,16 @@
+{
+  "name": "read-me",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "nodecr": "*"
+  },
+  "devDependencies": {
+    "mocha": ">=1.5.0",
+    "should": "1.3.0",
+    "spec": "1.0.0rc4",
+    "assert": "0.4.9",
+    "request": "2.27.0",
+    "coffee-script": "1.6.3"
+  }
+}
