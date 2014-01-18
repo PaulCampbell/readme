@@ -11,7 +11,7 @@ html
        a(href="/") readme
 
     div
-      form
+      form(action="/ocr", method="post", enctype="multipart/form-data")
         div
           label(for="image")
           input(type="file" name="image")
