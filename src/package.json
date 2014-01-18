@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "*",
-    "nodecr": "*"
+    "nodecr": "*",
+    "jade": "*"
   },
   "devDependencies": {
     "mocha": ">=1.5.0",
