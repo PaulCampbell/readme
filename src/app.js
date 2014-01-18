@@ -24,7 +24,7 @@ app.post('/ocr', function (req, res) {
     fs.writeFile(newPath, data, function (err) {
       ncr.process(newPath, function(err, text){
         if(err) return console.error(err)
-
+        console.log("** FOUND: " + text + " **");
         res.send(text);
       }, 'eng', 6)
     });

@@ -1,10 +1,13 @@
 should = require 'should'
-request = require 'request'
+supertest = require('supertest')
+request = supertest('localhost:8080')
 
 
-describe 'finding text', ->
-  it 'returns 201 with the link', (done) ->
-    request("http://localhost:8080").post("/ocr").attach("file", "testfiles/abbey_road.jpg").end (err, res) ->
-      res.should.have.status 200 # 'success' status
+describe 'finding text in an image', ->
+  picture_path = 'test/testfiles/abbey_road.jpg'
+  it 'can recognise text', (done) ->
+    request.post('/ocr') .attach('image', picture_path).end (err, res) -> 
+      res.text.replace(/(\r\n|\n|\r)/gm," ").replace(RegExp(" +(?= )", "g"), "").should.include("ABBEY ROAD")
+      res.should.have.status(200)
       done()
 
