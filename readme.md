@@ -2,6 +2,8 @@
 
 It's an optical character recognition (ocr) web service.  Send it images, it will send you back any text it can find in there.
 
+It uses Tesseract.
+
 ## Deployment
 
 You can deploy it with Docker
@@ -10,7 +12,7 @@ You can deploy it with Docker
 
     docker run -p 50000:8080 -d docker/read-me
 
-Alternatively, just run it up with:
+Alternatively, install Tesseract and its training data (see the Dockerfile), then run it up with:
 
     npm install
 
